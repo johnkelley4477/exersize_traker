@@ -1,0 +1,39 @@
+<div class="execise_container">
+	<h3>{{exercise}}</h3>
+	<div class="canvas_container">
+		<canvas id="canvas_{{@index}}"></canvas>
+	</div>
+	<input type="button" id="table_btn_{{@index}}" class="btn" value="show data"/>
+	<table id="table_{{@index}}" class="data_table">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Reps</th>
+				<th>Duration</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each data}}
+				<tr>
+					<td>{{this.date}}</td>
+					<td>{{this.reps}}</td>
+					<td>{{this.time}}</td>
+					<td><a class="red" href="/exercisetracker/deletecollection/{{this.id}}">X</a></td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript">
+	var labels = [{{#each data}}'{{{this.date}}}',{{/each}}],
+			reps = [{{#each data}}'{{{this.reps}}}',{{/each}}],
+			time = [{{#each data}}'{{{this.time}}}',{{/each}}],
+			exercise = "{{exercise}}";
+	progress.showTable({{@index}});
+	var data = reps;
+	if(data[0] === "1"){
+		data = time;
+	}
+	progress.drawChart({{@index}},data,labels);
+</script>

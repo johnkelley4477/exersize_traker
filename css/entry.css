@@ -1,0 +1,44 @@
+.inputs, label{
+	display: inherit; 
+	font-size: 15pt;
+}
+#enter{
+	font-size: 15pt;
+    margin-left: 47px;
+}
+
+form input {
+    margin-left: 45px;
+    margin-bottom: 15px;
+    width:348px;
+}
+form label {
+	font-weight: bold;
+}
+.container{
+	width:400px;
+	margin: auto;
+}
+.success {
+    border: #0a0 2px double;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 10px;
+    color: #050;
+    background-color: #0f0;
+}
+.failed {
+    border: #a00 2px double;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 10px;
+    color: #500;
+    background-color: #f00;
+}
+#progress{
+	font-size: 14pt;
+	background-color: #050;
+    margin-bottom: 15px;
+    width: 348px;
+    margin-left: 46px;
+}
